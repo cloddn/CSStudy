@@ -1,8 +1,6 @@
-# Partitioning + Sharding
+# Partitioning + Sharding 간략
 
 태그: 데이터베이스
-
-**📌✔**
 
 # 파티셔닝 (Partitioning)
 
@@ -40,7 +38,7 @@
 
 ### (1) 수평 파티셔닝 (Horizontal Partitioning)
 
-![수평 파티셔닝](Partitioning%20+%20Sharding%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.22.01.png)
+![수평 파티셔닝](Partitioning%20+%20Sharding%20%E1%84%80%E1%85%A1%E1%86%AB%E1%84%85%E1%85%A3%E1%86%A8%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.22.01.png)
 
 수평 파티셔닝
 
@@ -60,7 +58,7 @@
     - 샤딩은 하나의 큰 테이블을 쪼개 각각 **다른 데이터베이스**에 분산 저장
 </aside>
 
-![샤딩](Partitioning%20+%20Sharding%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.24.23.png)
+![샤딩](Partitioning%20+%20Sharding%20%E1%84%80%E1%85%A1%E1%86%AB%E1%84%85%E1%85%A3%E1%86%A8%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.24.23.png)
 
 샤딩
 
@@ -72,7 +70,7 @@
 
 ### (2) 수직 파티셔닝 (Vertical Partitioning)
 
-![수직 파티셔닝](Partitioning%20+%20Sharding%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.26.47.png)
+![수직 파티셔닝](Partitioning%20+%20Sharding%20%E1%84%80%E1%85%A1%E1%86%AB%E1%84%85%E1%85%A3%E1%86%A8%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-17_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.26.47.png)
 
 수직 파티셔닝
 
@@ -110,9 +108,83 @@
 
 ### (4) 합성 분할 (Composite partitioning)
 
-- 상기 기술을 결합하는  것, 파티션의 서브 파티션을 뜼함
+- 상기 기술을 결합하는  것, 파티션의 서브 파티션을 뜻함
 - 큰 파티션에 의한 I/O 요청을 여러 파티션으로 분산할 수 있음
-    - 예를 들면, 먼저 범위를 분할, 다음에 해시 분할 같은 것
+    - 예를 들면, 먼저 범위를 분할, 다음에 해시 분할하는 것과 같은것
+
+## **📌 파티셔닝 실제로 해보기~~**
+
+### **✔ 배경**
+
+AWS RDS에서 Legacy DB는 db.t2.micro 크기로 사용
+
+![스크린샷 2023-07-18 오후 10.10.13.png](Partitioning%20+%20Sharding%20%E1%84%80%E1%85%A1%E1%86%AB%E1%84%85%E1%85%A3%E1%86%A8%209023c6021b874e2b8ea82b81af27401f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-07-18_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_10.10.13.png)
+
+### **✔ 분할 기준**
+
+1. 범위 분할 ( Range partitioning)
+    
+    ```sql
+    CREATE TABLE t1 (
+        id INT,
+        year_col INT
+    )
+    PARTITION BY RANGE (year_col) (
+        PARTITION p0 VALUES LESS THAN (1991), 
+        PARTITION p1 VALUES LESS THAN (1995),
+        PARTITION p2 VALUES LESS THAN (1999)
+    );
+    
+    INSERT INTO t2 (id, year_col)
+    VALUES (1, 1990),(2, 1991),(3,1996),(4,1999),(5,1995),(6,1989),(7,1891),(8,1892);
+    ```
+    
+2. 목록 분할 ( List partitioning)
+    
+    ```sql
+    CREATE TABLE employees (
+        id INT NOT NULL,
+        fname VARCHAR(30),
+        lname VARCHAR(30),
+        hired DATE NOT NULL DEFAULT '1970-01-01',
+        separated DATE NOT NULL DEFAULT '9999-12-31',
+        job_code INT,
+        store_id INT
+    )
+    PARTITION BY LIST(store_id) (
+        PARTITION pNorth VALUES IN (3,5,6,9,17),
+        PARTITION pEast VALUES IN (1,2,10,11,19,20),
+        PARTITION pWest VALUES IN (4,12,13,14,18),
+        PARTITION pCentral VALUES IN (7,8,15,16)
+    );
+    
+    ```
+    
+3. 해시 분할 ( Hash partitioning)
+    
+    ```sql
+    CREATE TABLE t1 (
+        id INT,
+        year_col INT
+    )
+    PARTITION BY HASH(id) #해시 할 칼럼 값
+    PARTITIONS 8; #테이블을 나눌 분할수
+    ```
+    
+
+1. 합성 분할 ( Composite Partitioning)
+    
+    ```sql
+    CREATE TABLE ts (id INT, purchased DATE)
+        PARTITION BY RANGE( YEAR(purchased) )
+        SUBPARTITION BY HASH( TO_DAYS(purchased) )
+        SUBPARTITIONS 2 (
+            PARTITION p0 VALUES LESS THAN (1990),
+            PARTITION p1 VALUES LESS THAN (2000),
+            PARTITION p2 VALUES LESS THAN MAXVALUE
+        );
+    ```
+    
 
 🔗 [https://code-lab1.tistory.com/202](https://code-lab1.tistory.com/202)
 
